@@ -1,0 +1,17 @@
+{
+  "name": "ppt-maker-agent-plugin",
+  "metadata": {
+    "description": "Project-scoped PPT production router for Claude Code, Codex, and agentic presentation workflows."
+  },
+  "owner": {
+    "name": "Kunkun"
+  },
+  "plugins": [
+    {
+      "name": "ppt-maker",
+      "description": "PPT production toolkit: route display decks, image assets, editable PPTX, fixed-template fill, and deck verification.",
+      "source": "./plugins/ppt-maker"
+    }
+  ]
+}
+

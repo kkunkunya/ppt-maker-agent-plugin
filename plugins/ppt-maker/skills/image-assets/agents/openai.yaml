@@ -1,0 +1,4 @@
+interface:
+  display_name: "PPT Image Assets"
+  short_description: "Plan slide image assets safely."
+  default_prompt: "Plan slide image assets for covers, backgrounds, diagrams, or explainer pages without claiming they are editable decks."

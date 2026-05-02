@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML Showcase Deck"
+  short_description: "Plan browser-first decks for recording and live display."
+  default_prompt: "Create a browser-first presentation plan for video, recording, or live display."

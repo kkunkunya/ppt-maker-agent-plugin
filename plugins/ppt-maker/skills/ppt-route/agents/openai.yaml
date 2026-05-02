@@ -1,0 +1,4 @@
+interface:
+  display_name: "PPT Route"
+  short_description: "Route PPT requests to editable, template, HTML, or image modes."
+  default_prompt: "Route this PPT request to the correct output mode and enforce editability boundaries."

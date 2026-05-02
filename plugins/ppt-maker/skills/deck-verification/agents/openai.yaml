@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deck Verification"
+  short_description: "Verify PPTX, HTML, or raster deck deliverables before handoff."
+  default_prompt: "Plan and run verification for a generated deck, including editability, template safety, rendering, and artifact evidence."

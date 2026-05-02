@@ -1,0 +1,9 @@
+{
+  "name": "ppt-maker",
+  "version": "0.1.0",
+  "description": "PPT production toolkit: route presentation requests across HTML showcase, image assets, editable PPTX, fixed-template fill, and verification.",
+  "author": {
+    "name": "Kunkun"
+  },
+  "skills": "./skills/"
+}

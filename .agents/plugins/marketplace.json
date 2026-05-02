@@ -1,0 +1,17 @@
+{
+  "name": "ppt-maker-agent-plugin",
+  "interface": {
+    "displayName": "PPT Maker Agent Plugin"
+  },
+  "plugins": [
+    {
+      "name": "ppt-maker",
+      "description": "PPT production toolkit: route display decks, image assets, editable PPTX, fixed-template fill, and deck verification.",
+      "source": {
+        "source": "local",
+        "path": "./plugins/ppt-maker"
+      }
+    }
+  ]
+}
+

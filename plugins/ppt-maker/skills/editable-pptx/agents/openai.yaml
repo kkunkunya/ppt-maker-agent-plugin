@@ -1,0 +1,4 @@
+interface:
+  display_name: "Editable PPTX"
+  short_description: "Plan object-level editable PowerPoint deliverables."
+  default_prompt: "Design an object-level editable PPTX workflow from outline, data, or source material."

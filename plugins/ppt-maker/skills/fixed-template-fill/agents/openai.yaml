@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fixed Template Fill"
+  short_description: "Fill locked templates using safe regions."
+  default_prompt: "Inspect a PowerPoint template, define a schema, and plan safe fill operations."
