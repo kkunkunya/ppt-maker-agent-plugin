@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Adds Simplified Chinese README and documentation.
+- Adds Chinese install and usage prompts for Claude Code, Codex, and fallback agents.
+
 ## v0.1.0
 
 - Initial open-source release.
@@ -12,4 +17,3 @@
   - `deck-verification`
 - Adds Claude Code and Codex marketplace manifests.
 - Documents project-scoped installation and agent prompt fallback.
-

@@ -1,5 +1,7 @@
 # PPT Maker Agent Plugin
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 Project-scoped PPT production routing for Claude Code, Codex, and other coding agents.
 
 Most agent-made decks fail for a simple reason: the agent treats every "PPT" request as the same artifact. This plugin makes the agent ask the first important question: **what kind of deck are we delivering?**
@@ -105,4 +107,3 @@ docs/                              # install prompts and mental model docs
 ## License
 
 MIT
-
