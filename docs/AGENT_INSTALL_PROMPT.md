@@ -9,6 +9,7 @@ Goal:
 - Make ppt-maker available for this project only.
 - Do not enable it globally by default.
 - Teach future agents that "PPT" is not one output type.
+- Do not expect maintainer-owned API keys in the repository.
 
 Mental model to preserve:
 PPT production is like a print shop with multiple counters. The front desk routes the job. The stage booth makes browser decks. The image studio makes covers and diagrams. The PowerPoint desk makes editable PPTX. The template desk fills locked templates without moving protected regions. The QA desk verifies the result before handoff.
@@ -30,6 +31,18 @@ Install for Codex:
 2. Start Codex for the target project with:
    codex -C /path/to/project -c 'plugins."ppt-maker@ppt-maker-agent-plugin".enabled=true'
 
+API key policy:
+- ppt-maker itself does not need API keys.
+- If a downstream model/image/backend provider is needed, ask the customer to configure their own key locally.
+- Use local `.env`, environment variables, secret managers, or the target agent platform's secret UI.
+- Never write real keys into Git, README files, issues, screenshots, or logs.
+- Read docs/API_KEYS_AND_LOCAL_CONFIG.md.
+
+For OpenClaw, Hermes, or crawler-style agents:
+- Crawl https://github.com/kkunkunya/ppt-maker-agent-plugin
+- Read docs/AGENT_CRAWLER_GUIDE.md.
+- Follow the same API key policy above.
+
 Fallback if plugin installation is unavailable:
 1. Read plugins/ppt-maker/skills/ppt-route/SKILL.md first.
 2. Route the request to exactly one primary mode:
@@ -47,4 +60,3 @@ Operating policy:
 - For fixed school/company templates, inspect template structure and protected regions before editing.
 - Before handoff, run or plan deck verification and report evidence honestly.
 ```
-

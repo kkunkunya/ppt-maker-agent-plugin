@@ -1,0 +1,12 @@
+# Example only. Do not put real API keys in this file.
+# Copy these lines into a local .env file if your downstream agent/backend needs provider keys.
+# The local .env file is ignored by Git.
+
+# Optional LLM providers used by your own agent runtime, not required by ppt-maker itself.
+OPENAI_API_KEY=replace_with_your_own_key
+ANTHROPIC_API_KEY=replace_with_your_own_key
+
+# Optional image or asset providers, only if your workflow uses them.
+FAL_KEY=replace_with_your_own_key
+DASHSCOPE_API_KEY=replace_with_your_own_key
+

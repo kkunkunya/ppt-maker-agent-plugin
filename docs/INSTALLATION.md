@@ -11,6 +11,10 @@ Use this split:
 
 That keeps normal coding sessions lighter while preserving a repeatable install path.
 
+## API Keys
+
+`ppt-maker` itself does not require any API key. If your project uses a separate LLM, image generation, or document conversion backend, configure your own key locally. See [API_KEYS_AND_LOCAL_CONFIG.md](API_KEYS_AND_LOCAL_CONFIG.md).
+
 ## Claude Code
 
 ```bash
@@ -54,3 +58,4 @@ For agents without plugin support:
 3. After routing, tell it to read the selected mode skill.
 4. Use `plugins/ppt-maker/_shared/references/` for output mode, template schema, and verification rules.
 
+For OpenClaw, Hermes, and other crawler-style agents, use [AGENT_CRAWLER_GUIDE.md](AGENT_CRAWLER_GUIDE.md).

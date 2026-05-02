@@ -11,6 +11,10 @@
 
 这样普通代码会话不会额外加载 PPT 规则，但需要做演示文稿时又能稳定启用。
 
+## API Key
+
+`ppt-maker` 本身不需要 API key。如果你的项目另行使用大模型、图片生成或文档转换后端，请在本地配置自己的 key。见 [API_KEYS_AND_LOCAL_CONFIG.zh-CN.md](API_KEYS_AND_LOCAL_CONFIG.zh-CN.md)。
+
 ## Claude Code
 
 ```bash
@@ -52,3 +56,4 @@ enabled = false
 3. 路由后，再读取对应模式 skill。
 4. 使用 `plugins/ppt-maker/_shared/references/` 下的输出模式、模板 schema 和验证规则。
 
+OpenClaw、Hermes 和其他 crawler-style agent 参考 [AGENT_CRAWLER_GUIDE.zh-CN.md](AGENT_CRAWLER_GUIDE.zh-CN.md)。

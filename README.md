@@ -36,6 +36,8 @@ It is intentionally **project-scoped**. Register the marketplace globally if you
 
 ## Install
 
+Read [API keys and local config](docs/API_KEYS_AND_LOCAL_CONFIG.md) before connecting any model or image provider. This repository does not include maintainer-owned API keys; users configure their own keys locally.
+
 ### Claude Code
 
 ```bash
@@ -59,6 +61,12 @@ The first command registers the marketplace. The second starts Codex with `ppt-m
 ### Other Agents
 
 If your agent does not support Claude/Codex plugin manifests, copy the prompt in [docs/AGENT_INSTALL_PROMPT.md](docs/AGENT_INSTALL_PROMPT.md). The fallback is simple: make the agent read `plugins/ppt-maker/skills/ppt-route/SKILL.md` first, then read the sibling skill that matches the output mode.
+
+For crawler-style agents such as OpenClaw, Hermes, or custom browser agents, give them this repository URL and the guide in [docs/AGENT_CRAWLER_GUIDE.md](docs/AGENT_CRAWLER_GUIDE.md):
+
+```text
+https://github.com/kkunkunya/ppt-maker-agent-plugin
+```
 
 ## Typical Use
 
@@ -96,12 +104,19 @@ plugins/ppt-maker/_shared/         # mode, template, and verification references
 docs/                              # install prompts and mental model docs
 ```
 
+## API Keys
+
+`ppt-maker` itself does not need an API key. If your downstream agent/backend uses OpenAI, Anthropic, fal, DashScope, or another provider, configure your own key in a local `.env`, environment variable, secret manager, or the agent platform's secret UI.
+
+Do not commit real keys. Use `examples/local-config.example.txt` only as a placeholder template, then copy values into your own local `.env`.
+
 ## Boundaries
 
 - This plugin does not pretend HTML decks are editable PPTX files.
 - This plugin does not claim full-slide PNG decks are editable.
 - Fixed-template work must inspect the template and define safe zones before filling.
 - Verification must report `pass`, `pass_with_warnings`, `partial`, `blocked`, or `failed` honestly.
+- Real API keys must stay outside Git; customers configure their own local keys when needed.
 - There is no deterministic PPTX generation backend in v0.1.0. The plugin provides routing, guardrails, and handoff contracts for agents.
 
 ## License

@@ -9,6 +9,7 @@
 - 让 ppt-maker 只在当前项目可用。
 - 不要默认全局启用。
 - 让后续 Agent 明白：“PPT”不是单一产物。
+- 不要期望仓库里有维护者自己的 API key。
 
 必须保留的认知模型：
 PPT 生产像一家印刷店，有多个柜台。前台负责路由；舞台间做网页演示；图片工作室做封面和图解；PowerPoint 柜台做可编辑 PPTX；模板柜台填固定模板且不能移动保护区域；质检柜台在交付前验证结果。
@@ -30,6 +31,18 @@ Codex 安装：
 2. 为目标项目启动 Codex：
    codex -C /path/to/project -c 'plugins."ppt-maker@ppt-maker-agent-plugin".enabled=true'
 
+API key 策略：
+- ppt-maker 本身不需要 API key。
+- 如果下游模型/图片/后端服务需要 key，请让客户自己在本地配置自己的 key。
+- 使用本地 `.env`、环境变量、密钥管理器或目标 Agent 平台的 secret UI。
+- 不要把真实 key 写进 Git、README、issue、截图或日志。
+- 先读 docs/API_KEYS_AND_LOCAL_CONFIG.zh-CN.md。
+
+OpenClaw、Hermes 或 crawler-style agent：
+- 爬取 https://github.com/kkunkunya/ppt-maker-agent-plugin
+- 阅读 docs/AGENT_CRAWLER_GUIDE.zh-CN.md。
+- 遵守上面的 API key 策略。
+
 如果不能安装 plugin，则走兜底：
 1. 先读 plugins/ppt-maker/skills/ppt-route/SKILL.md。
 2. 将请求路由到一个主模式：
@@ -47,4 +60,3 @@ Codex 安装：
 - 学校/公司固定模板必须先检查 placeholders、shape names、bounding boxes、forbidden regions。
 - 交付前必须执行或规划 deck verification，并如实报告证据。
 ```
-

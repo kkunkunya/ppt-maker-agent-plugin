@@ -36,6 +36,8 @@
 
 ## 安装
 
+接入任何模型或图片服务前，先读 [API Key 与本地配置](docs/API_KEYS_AND_LOCAL_CONFIG.zh-CN.md)。这个仓库不包含维护者自己的 API key；用户需要在本地配置自己的 key。
+
 ### Claude Code
 
 ```bash
@@ -59,6 +61,12 @@ codex -C /path/to/your-presentation-project \
 ### 其他 Agent
 
 如果你的 Agent 不支持 Claude/Codex plugin manifest，可以复制 [docs/AGENT_INSTALL_PROMPT.zh-CN.md](docs/AGENT_INSTALL_PROMPT.zh-CN.md) 里的 prompt。兜底方式很简单：先让 Agent 读 `plugins/ppt-maker/skills/ppt-route/SKILL.md`，再按路由结果读取对应 sibling skill。
+
+如果是 OpenClaw、Hermes 或自定义浏览器 Agent 这类 crawler-style agent，把这个 GitHub 链接和 [docs/AGENT_CRAWLER_GUIDE.zh-CN.md](docs/AGENT_CRAWLER_GUIDE.zh-CN.md) 给它：
+
+```text
+https://github.com/kkunkunya/ppt-maker-agent-plugin
+```
 
 ## 常见用法
 
@@ -96,15 +104,21 @@ plugins/ppt-maker/_shared/         # 模式、模板、验证规则
 docs/                              # 安装 prompt 与认知模型文档
 ```
 
+## API Key
+
+`ppt-maker` 本身不需要 API key。如果下游 Agent/后端要使用 OpenAI、Anthropic、fal、DashScope 或其他服务商，请用户把自己的 key 配置在本地 `.env`、环境变量、密钥管理器或目标 Agent 平台的 secret UI 里。
+
+不要把真实 key 提交进 Git。`examples/local-config.example.txt` 只作为占位模板，需要时复制到你自己的本地 `.env`。
+
 ## 边界
 
 - 不把 HTML deck 伪装成可编辑 PPTX。
 - 不把整页 PNG 型 PPTX 说成可编辑 PPTX。
 - 固定模板任务必须先检查模板结构和安全区域。
 - 验证结果必须如实报告 `pass`、`pass_with_warnings`、`partial`、`blocked` 或 `failed`。
+- 真实 API key 必须留在 Git 之外；客户按需配置自己的本地 key。
 - v0.1.0 还没有确定性 PPTX 生成后端。当前版本提供的是路由、边界、检查清单和 Agent 交付契约。
 
 ## License
 
 MIT
-
