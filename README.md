@@ -1,5 +1,10 @@
 # PPT Maker Agent Plugin
 
+## Portfolio positioning
+
+This is a portfolio-facing Agent/Plugin project for presentation workflows: routing PPT requests across HTML showcase, image assets, editable decks, fixed-template fills, and verification.
+
+
 [English](README.md) | [简体中文](README.zh-CN.md)
 
 Project-scoped PPT production routing for Claude Code, Codex, and other coding agents.
